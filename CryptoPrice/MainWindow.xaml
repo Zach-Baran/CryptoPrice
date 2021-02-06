@@ -1,0 +1,24 @@
+﻿<Window x:Class="CryptoPrice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CryptoPrice"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <StackPanel>
+            
+                <TextBlock Text="API Data" FontSize="40"/>
+                <TextBox x:Name="ShowPrice" HorizontalAlignment="Left" IsReadOnly="True" 
+                         Height="30" Width="200" Background="#eee" 
+                         Padding="2"/>
+
+            <Button x:Name="PriceButton" Click="PriceButton_Click" Content="Check Price" 
+                    Width="300" FontSize="20" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
