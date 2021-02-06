@@ -32,7 +32,7 @@ namespace CryptoPrice
 
                 var temp = JsonConvert.DeserializeObject<GetJSONData>(results);
                 Console.WriteLine("Deserialization: " + temp.LiveData.ExchangeRate + " " + temp.LiveData.Date);
-      
+       
                 Thread.Sleep(12000);
             }
         }
