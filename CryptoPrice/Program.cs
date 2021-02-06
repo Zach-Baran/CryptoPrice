@@ -12,7 +12,7 @@ namespace CryptoPrice
         static void Main(string[] args)
         {
             AVConnection conn = new AVConnection("J792SK2EZWSZBJKG");
-            conn.SaveCSVFromURL("BTC");
+
         }
     }
     public class AVConnection
@@ -20,7 +20,7 @@ namespace CryptoPrice
         private readonly string _apiKey;
         public AVConnection(string apiKey) { this._apiKey = apiKey; }
         
-        public void SaveCSVFromURL(string symbol)
+        public void GetAPI(string symbol)
         {
             while (true)
             {
@@ -35,30 +35,6 @@ namespace CryptoPrice
        
                 Thread.Sleep(12000);
             }
-        }
-
-        public string Printres(string res)
-        {
-
-            int ind = res.IndexOf("Exchange Rate\": \"");
-            int quoteCount = 2;
-            string num = "";
-
-            while (quoteCount > -1)
-            {
-                if (Char.IsDigit(res[ind]) || res[ind] == '.')
-                {
-                    num += res[ind];
-                    ind++;
-                }
-                else if (res[ind] == '"')
-                {
-                    quoteCount--;
-                    ind++;
-                }
-                else ind++;
-            }
-            return num;
         }
     }
 }
